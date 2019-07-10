@@ -1,0 +1,6 @@
+{
+  "notification": {
+    "title": "FGC",
+    "body": "Payment received: {{amount}} FGC"
+  }
+}

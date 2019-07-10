@@ -1,0 +1,58 @@
+<html>
+<head>
+
+</head>
+<body>
+Here
+<script src="/socket.io/socket.io.js"></script>
+<script>
+    var socket = io(),
+        sum = 0;
+
+    socket.on('token_balance_change', function(data) {
+
+        data.balances.forEach(function (obj) {
+            sum += obj.balance;
+        });
+
+        console.log(sum);
+        console.log(data);
+    });
+
+    socket.on('balance_changed', function(data) {
+        console.log('balance_changed', data);
+    });
+
+    /*
+    * balance_subscribe
+    * */
+
+    socket.emit('subscribe', 'balance_subscribe', ["fLBVfrc8pjebdcmv5SYhcsjgrMCDzQT3dQ",
+        "fXNPmajTB9dp3JeY7GZAE5DNyWhgtYjmB9",
+        "fNo17WdKRKBAGuPw7YSpUSD95x4PmyvwFM"],
+         {
+//             notificationToken:'e7iYthP6DM4:APA91bHY15YneLDcAhgTEt-_Pxv2g9dooOxfuiRc0zAoYMZbZWSRQeGL3Mec0dyedFncVsmUfiS4ickDcbZKV9YqMw1ZeGc9MIbsv7Z2OJTEY7CjcWHYG8orkD3ps-dWkCwaH0afF1TV',
+             notificationToken: 'eoD3HV8RYcU:APA91bEZbKQz816S-cCUAmAARBh8h_Fqk7XncwSVNeqzWaMS9yLFsNXeLWHM70hQmwSmBPfYczvavZAeYrCRiOxG3VZVmV3SVvB3JArdnZTzA-RDIXJCtwQ0fgWZD6iymx-Se4sYjQEA',
+             language: 'es'
+         }
+    );
+
+
+    /**
+     * token_balance_change
+     */
+    socket.emit('subscribe', 'token_balance_change', {
+        contract_address: '6b17f05d2b1d1adb97ea409ea9848c8b1b89be3d',
+        addresses: ["fLBVfrc8pjebdcmv5SYhcsjgrMCDzQT3dQ",
+        "fNo17WdKRKBAGuPw7YSpUSD95x4PmyvwFM"]},
+        {
+            notificationToken:'e7iYthP6DM4:APA91bHY15YneLDcAhgTEt-_Pxv2g9dooOxfuiRc0zAoYMZbZWSRQeGL3Mec0dyedFncVsmUfiS4ickDcbZKV9YqMw1ZeGc9MIbsv7Z2OJTEY7CjcWHYG8orkD3ps-dWkCwaH0afF1TV',
+            prevToken: 'eoD3HV8RYcU:APA91bEZbKQz816S-cCUAmAARBh8h_Fqk7XncwSVNeqzWaMS9yLFsNXeLWHM70hQmwSmBPfYczvavZAeYrCRiOxG3VZVmV3SVvB3JArdnZTzA-RDIXJCtwQ0fgWZD6iymx-Se4sYjQEA',
+            language: 'en'
+        }
+    );
+
+
+</script>
+</body>
+</html>
