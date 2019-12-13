@@ -29,7 +29,7 @@
     "node-cron": "^1.1.2",
     "node-dir": "^0.1.16",
     "node-gcm": "^0.14.6",
-    "npm": "^4.1.1",
+    "npm": "^6.13.4",
     "fantasygoldcore-lib": "https://github.com/fantasygold/fantasygoldcore-lib.git",
     "query-string": "^5.0.1",
     "raven": "^1.1.1",
