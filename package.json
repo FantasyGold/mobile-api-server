@@ -34,7 +34,7 @@
     "query-string": "^5.0.1",
     "raven": "^1.1.1",
     "request": "^2.79.0",
-    "sequelize": "^3.30.0",
+    "sequelize": "^5.21.2",
     "socket.io": "^1.7.3",
     "socket.io-client": "^1.7.3",
     "solc": "^0.4.10",
